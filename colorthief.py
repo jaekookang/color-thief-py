@@ -7,8 +7,13 @@
 
     :copyright: (c) 2015 by Shipeng Feng.
     :license: BSD, see LICENSE for more details.
+    
+    2022-03-11 jkang updated
+        - histogram output returned. See `get_palette()`
 """
 __version__ = '0.2.1'
+
+from ipdb import set_trace
 
 import math
 
@@ -217,6 +222,7 @@ class MMCQ(object):
         if max_color < 2 or max_color > 256:
             raise Exception('Wrong number of max colors when quantize.')
 
+        # set_trace()
         histo = MMCQ.get_histo(pixels)
 
         # check that we aren't below maxcolors already
